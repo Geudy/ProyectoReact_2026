@@ -3,8 +3,8 @@ interface BadgeProps {
     color?: string;
     variant?: 'solid' | 'outline';
 }
-export function Badge({ label, color = '#6b7280', variant =
-    'solid' }: BadgeProps) {
+
+export function Badge({ label, color = '#6b7280', variant = 'solid' }: BadgeProps) {
     const style =
         variant === 'solid'
             ? { backgroundColor: color, color: '#fff' }

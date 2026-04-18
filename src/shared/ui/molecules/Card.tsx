@@ -3,12 +3,14 @@ interface CardProps {
     className?: string;
     onClick?: () => void;
 }
+
 interface CardHeaderProps {
     title: string;
     subtitle?: string;
     actions?: React.ReactNode;
 }
-function Card({ children, className = '', onClick }: CardProps) {
+
+export function Card({ children, className = '', onClick }: CardProps) {
     return (
         <div
             style={{
@@ -17,14 +19,15 @@ function Card({ children, className = '', onClick }: CardProps) {
                 padding: '16px',
                 marginBottom: '8px',
                 backgroundColor: '#fff',
-            }}  
-            className={`rounded-lg border border-gray-200 bg-white p-4 shadow-sm ${onClick ? 'cursor-pointer hover:shadow-mdtransition-shadow' : ''} ${className}`}
+            }}
+            className={`rounded-lg border border-gray-200 bg-white p-4 shadow-sm ${onClick ? 'cursor-pointer hover:shadow-md transition-shadow' : ''} ${className}`}
             onClick={onClick}
         >
             {children}
         </div>
     );
 }
+
 function CardHeader({ title, subtitle, actions }: CardHeaderProps) {
     return (
         <div className="flex items-start justify-between mb-3">
@@ -36,5 +39,7 @@ function CardHeader({ title, subtitle, actions }: CardHeaderProps) {
         </div>
     );
 }
+
 Card.Header = CardHeader;
+// Export nombrado
 export { Card };

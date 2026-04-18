@@ -1,44 +1,52 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
+
 interface TabsContextType {
     activeTab: string;
     setActiveTab: (id: string) => void;
 }
+
 const TabsContext = createContext<TabsContextType | null>(null);
+
 function useTabsContext(): TabsContextType {
     const context = useContext(TabsContext);
     if (!context) throw new Error('Tabs compound components must be used inside <Tabs>');
     return context;
 }
+
 interface TabsProps {
     defaultTab: string;
     children: ReactNode;
 }
+
 function Tabs({ defaultTab, children }: TabsProps) {
     const [activeTab, setActiveTab] = useState(defaultTab);
     return (
-        <TabsContext.Provider value={{
-            activeTab, setActiveTab
-        }}>
+        <TabsContext.Provider value={{ activeTab, setActiveTab }}>
             <div>{children}</div>
         </TabsContext.Provider>
     );
 }
+
 function TabList({ children }: { children: ReactNode }) {
     return (
-        <div style={{
-            display: 'flex',
-            borderBottom: '2px solid #e2e8f0',
-            marginBottom: '16px',
-        }}>
+        <div
+            style={{
+                display: 'flex',
+                borderBottom: '2px solid #e2e8f0',
+                marginBottom: '16px',
+            }}
+        >
             {children}
         </div>
     );
 }
+
 interface TabProps {
     id: string;
     children: ReactNode;
     disabled?: boolean;
-} 
+}
+
 function Tab({ id, children }: TabProps) {
     const { activeTab, setActiveTab } = useTabsContext();
     const isActive = activeTab === id;
@@ -61,13 +69,16 @@ function Tab({ id, children }: TabProps) {
         </button>
     );
 }
+
 function TabPanels({ children }: { children: ReactNode }) {
     return <div>{children}</div>;
 }
+
 interface TabPanelProps {
     id: string;
     children: ReactNode;
 }
+
 function TabPanel({ id, children }: TabPanelProps) {
     const { activeTab } = useTabsContext();
     if (activeTab !== id) return null;
