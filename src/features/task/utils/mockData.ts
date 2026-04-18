@@ -3,14 +3,16 @@ export const TASK_STATUSES = {
     IN_PROGRESS: 'in_progress',
     DONE: 'done',
 } as const;
+
 export const TASK_PRIORITIES = {
     LOW: 'low',
     MEDIUM: 'medium',
     HIGH: 'high',
 } as const;
-// Tipos derivados de las constantes — así evitamos duplicar definiciones
+
 export type TaskStatus = typeof TASK_STATUSES[keyof typeof TASK_STATUSES];
 export type TaskPriority = typeof TASK_PRIORITIES[keyof typeof TASK_PRIORITIES];
+
 export interface Task {
     id: string;
     title: string;
@@ -21,6 +23,7 @@ export interface Task {
     assignee?: string;
     createdAt: string;
 }
+
 export const mockTasks: Task[] = [
     {
         id: '1',
