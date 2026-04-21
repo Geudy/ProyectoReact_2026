@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Administrador de proyectos",
   description: "Aplicación para gestionar proyectos y tareas",
+  openGraph: {
+    title: "Administrador de proyectos",
+    description: "Aplicación para gestionar proyectos y tareas"
+  },
 };
 
 export default function RootLayout({
