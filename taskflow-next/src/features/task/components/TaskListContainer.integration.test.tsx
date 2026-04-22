@@ -4,7 +4,7 @@ import { TaskListContainer } from './TaskListContainer';
 import * as useAsyncHook from '../hooks/useAsync';
 import * as useTasksHook from '../hooks/useTasks';
 import { Task } from '../utils/mockData';
-import { describe } from 'node:test';
+import { describe, it } from 'node:test';
 
 const initialTasks: Task[] = [
   {
@@ -29,10 +29,9 @@ const initialTasks: Task[] = [
 
 describe('TaskListContainer integración', () => {
   it('agrega y elimina tareas correctamente', async () => {
-    // Mock de useAsync para simular delay
-    jest.spyOn(useAsyncHook, 'useAsync').mockImplementation((fn) => {
+    jest.spyOn(useAsyncHook, 'useAsync').mockImplementation((fn: (arg0: any) => void) => {
       return {
-        run: async (task) => {
+        run: async (task: any) => {
           await new Promise(res => setTimeout(res, 10));
           fn(task);
         },
@@ -81,7 +80,7 @@ describe('TaskListContainer integración', () => {
 
   it('filtra tareas por estado', async () => {
     jest.spyOn(useTasksHook, 'useTasks').mockReturnValue({
-      filteredTasks: [initialTasks[1]], // Solo la tarea completada
+      filteredTasks: [initialTasks[1]], 
       filter: 'done',
       setFilter: jest.fn(),
       addTask: jest.fn(),
@@ -101,3 +100,6 @@ describe('TaskListContainer integración', () => {
     });
   });
 });
+function expect(arg0: any) {
+  throw new Error('Function not implemented.');
+}
