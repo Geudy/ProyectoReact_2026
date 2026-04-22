@@ -25,6 +25,7 @@ export function TaskCard({ task, onClick, onDelete, onToggleDone }: TaskCardProp
                   <Badge label={task.priority} color={priorityColors[task.priority]} />
                   <button
                      onClick={onDelete}
+                     aria-label="eliminar"
                      style={{ marginLeft: 8, color: '#ef4444', background: 'none', border: 'none', cursor: 'pointer' }}
                   >🗑️</button>
                   <button
