@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "TaskFlow UI",
+    "description": "Frontend de la aplicación de gestión de tareas.",
+    "progress": 70
+  },
+  {
+    "id": "2",
+    "name": "TaskFlow Backend",
+    "description": "API y lógica de negocio para TaskFlow.",
+    "progress": 40
+  },
+  {
+    "id": "3",
+    "name": "TaskFlow DevOps",
+    "description": "Automatización y despliegue continuo.",
+    "progress": 20
+  }
+]

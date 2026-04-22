@@ -1,37 +1,28 @@
 "use client";
-import { createContext, useContext, useState, useMemo } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
-const ThemeStateContext = createContext<{ theme: string } | undefined>(undefined);
-const ThemeDispatchContext = createContext<{ setTheme: React.Dispatch<React.SetStateAction<string>> } | undefined>(undefined);
+const ThemeContext = createContext({
+    theme: 'light',
+    toggleTheme: () => {},
+});
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    const [theme, setTheme] = useState('light');
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [theme, setTheme] = useLocalStorage('theme', 'light');
 
-    const stateValue = useMemo(() => ({ theme }), [theme]);
-    const dispatchValue = useMemo(
-        () => ({ setTheme }),
-        []
-    );
+    useEffect(() => {
+        document.body.dataset.theme = theme;
+    }, [theme]);
+
+    const toggleTheme = () => setTheme((t: string) => (t === 'light' ? 'dark' : 'light'));
 
     return (
-        <ThemeStateContext.Provider value={stateValue}>
-            <ThemeDispatchContext.Provider value={dispatchValue}>
-                {children}
-            </ThemeDispatchContext.Provider>
-        </ThemeStateContext.Provider>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+        </ThemeContext.Provider>
     );
-}
+};
+
 export function useTheme() {
-    const context = useContext(ThemeStateContext);
-    if (!context) {
-        throw new Error('useTheme must be used within ThemeProvider');
-    }
-    return context;
-}
-export function useThemeActions() {
-    const context = useContext(ThemeDispatchContext);
-    if (!context) {
-        throw new Error('useThemeActions must be used within ThemeProvider');
-    }
-    return context;
+    return useContext(ThemeContext);
 }

@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# TaskFlow - Administrador de Proyectos y Tareas
 
-First, run the development server:
+Proyecto construido con Next.js 14+, React, Zustand, Atomic Design y pruebas con Vitest + React Testing Library.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Estructura y Arquitectura
+
+- **Next.js App Router**: Navegación y layouts modernos.
+- **Atomic Design**: Componentes organizados en `src/components/atoms`, `molecules`, `organisms`.
+- **Feature-based**: Lógica de dominio en `src/features/task`, `features/projects`, `features/tickets`.
+- **Store global**: Zustand en `src/store/kanbanStore.ts` para estado persistente de tareas.
+- **Context API**: Filtros y tema (`src/context/FiltersContext.tsx`, `ThemeContext.tsx`).
+- **Hooks avanzados**: `useLocalStorage`, `useDebounce`, `useFilters` en `src/hooks`.
+- **Datos mock**: JSON en `src/data/projects.json` y `tickets.json`.
+- **Tests**: Vitest + React Testing Library (`*.test.tsx`).
+- **Optimización**: React.memo, useMemo, lazy, Suspense.
+- **Accesibilidad**: Roles y aria-labels en componentes clave.
+
+## Estructura de carpetas
+
+```
+src/
+	app/           # Páginas y layouts Next.js
+	components/    # Atoms, molecules, organisms (Atomic Design)
+	features/      # Lógica de dominio (task, projects, tickets)
+	store/         # Zustand store global
+	context/       # Contextos globales
+	hooks/         # Custom hooks
+	data/          # Mock JSON
+	shared/        # Componentes compartidos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Principales decisiones
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Zustand** para estado global y persistencia localStorage.
+- **Atomic Design** para escalabilidad y reutilización UI.
+- **Tests** migrados a Vitest para velocidad y compatibilidad moderna.
+- **Metadata dinámica** por página usando Next.js 14+.
+- **Separación de lógica y presentación**: containers vs presentational.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts principales
 
-## Learn More
+- `npm run dev` — desarrollo
+- `npm run build` — build producción
+- `npm run test` — pruebas unitarias/integración (Vitest)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---

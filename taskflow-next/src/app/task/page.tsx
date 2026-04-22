@@ -1,10 +1,21 @@
-import { TaskListContainer } from "@/features/task";
-import Layout from "@/shared/components/Layout";
+import { TaskListContainer } from '../../components/organisms/TaskListContainer';
+import { ThemeProvider } from '../../context/ThemeContext';
+import { FiltersProvider } from '../../context/FiltersContext';
+import type { Metadata } from 'next';
 
-export default function TaskPage(){
+export const metadata: Metadata = {
+    title: 'Tareas',
+    description: 'Gestión de tareas en TaskFlow',
+};
+
+export default function TaskPage() {
     return (
-        <Layout>
-            <TaskListContainer/>
-        </Layout>
+        <ThemeProvider>
+            <FiltersProvider>
+                <main>
+                    <TaskListContainer />
+                </main>
+            </FiltersProvider>
+        </ThemeProvider>
     );
 }
