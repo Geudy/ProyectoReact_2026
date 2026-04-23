@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Task } from '../../features/task/utils/mockData';
+import { Task } from '@/features/task/utils/mockData';
 import { Badge } from '../atoms/Badge';
 
 export const TaskCard: React.FC<{ task: Task; onEdit?: (task: Task) => void; onDelete?: () => void }> = ({ task, onEdit, onDelete }) => (
