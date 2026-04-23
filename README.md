@@ -363,26 +363,13 @@ export const TaskListPresentation: React.FC<TaskListPresentationProps> = ({
 ---
 
 ## 📸 Pantallas en Ejecución
+<img width="1360" height="486" alt="image" src="https://github.com/user-attachments/assets/ce4fe0e3-264c-4456-8d6a-fd935b55223b" />
+<img width="1328" height="680" alt="image" src="https://github.com/user-attachments/assets/433fec7f-fe1a-43b9-9135-b52a62933dbb" />
+<img width="1260" height="626" alt="image" src="https://github.com/user-attachments/assets/72c63029-b8a2-4374-acaf-b2615b671399" />
+<img width="1183" height="564" alt="image" src="https://github.com/user-attachments/assets/400e845b-2873-47c9-9899-7d1ea7480401" />
+<img width="1165" height="561" alt="image" src="https://github.com/user-attachments/assets/8b574842-6f88-4c34-959f-03f9e2ba23e8" />
+<img width="1243" height="597" alt="image" src="https://github.com/user-attachments/assets/49136e0d-cdbb-427c-aee3-9c1f87b8fbd7" />
 
-### Dashboard Principal
-![Dashboard](./screenshots/dashboard.png)
-*Tableau principal con vista general de proyectos y tareas*
-
-### Vista Kanban
-![Kanban Board](./screenshots/kanban.png)
-*Tablero Kanban interactivo con drag & drop entre columnas*
-
-### Detalles de Proyecto
-![Project Details](./screenshots/project-details.png)
-*Página de detalles con tareas y tickets asociados*
-
-### Filtros Avanzados
-![Filters](./screenshots/filters.png)
-*Barra de filtros por estado, prioridad y asignado*
-
-### Tema Oscuro
-![Dark Theme](./screenshots/dark-theme.png)
-*Soporte para tema oscuro con persistencia*
 
 ---
 
@@ -564,39 +551,6 @@ npm run lint:fix     # Corrige errores automáticos
 | **TypeScript Strict** | Type safety 100%, menos bugs en producción |
 | **Tailwind CSS** | Utility-first, desarrollo rápido, archivo final optimizado |
 
----
-
-## ♿ Accesibilidad
-
-El proyecto implementa estándares WCAG 2.1 Level AA:
-
-- ✅ Roles ARIA semánticos
-- ✅ Labels asociados a inputs
-- ✅ Navegación por teclado
-- ✅ Contraste de colores cumplente
-- ✅ Atributos `aria-label` en botones de ícono
-- ✅ Estructura semántica HTML
-
-```typescript
-// Ejemplo de componente accesible
-<button 
-  aria-label="Eliminar tarea"
-  onClick={handleDelete}
-  title="Presiona para eliminar"
->
-  🗑️
-</button>
-
-<input 
-  id="task-input"
-  aria-describedby="task-help"
-  placeholder="Nueva tarea"
-/>
-<span id="task-help">Máximo 100 caracteres</span>
-```
-
----
-
 ## 🚀 Optimizaciones de Performance
 
 ### React Optimizations
@@ -622,65 +576,9 @@ const HeavyComponent = lazy(() => import('./HeavyComponent'));
 - Static generation donde sea posible
 - API routes para operaciones backend
 
----
-
-## 🤝 Contribuir
-
-Para contribuir al proyecto:
-
-1. **Fork** el repositorio
-2. **Crea una rama** (`git checkout -b feature/AmazingFeature`)
-3. **Commit cambios** (`git commit -m 'Add AmazingFeature'`)
-4. **Push a la rama** (`git push origin feature/AmazingFeature`)
-5. **Abre un Pull Request**
-
-### Convenciones de Código
-
-- **Commit messages**: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`
-- **Branch names**: `feature/`, `bugfix/`, `refactor/`, `docs/`
-- **Nombres de variables**: camelCase
-- **Componentes**: PascalCase
-- **Tipos**: PascalCase con `I` prefijo si es interfaz
-
----
-
-## 📝 Licencia
-
-Este proyecto está bajo la licencia MIT. Ver archivo [LICENSE](LICENSE) para más detalles.
-
----
-
 ## 👨‍💻 Autor
 
 **Geudy** - Estudiante de React Avanzado 2026
 
 - GitHub: [@Geudy](https://github.com/Geudy)
 - Email: [Tu email]
-
----
-
-## 📚 Recursos Adicionales
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [React 19 Docs](https://react.dev)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs)
-- [Zustand Store](https://github.com/pmndrs/zustand)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design)
-- [Vitest](https://vitest.dev)
-
----
-
-## 📞 Soporte
-
-Si encuentras problemas o tienes preguntas:
-
-1. Revisa la sección de [Issues](https://github.com/Geudy/ProyectoReact_2026/issues)
-2. Crea un issue descriptivo si no existe uno
-3. Incluye pasos para reproducir y logs de error
-
----
-
-**Última actualización**: 23 de Abril, 2026
-
-⭐ Si te gusta este proyecto, considera darle una estrella en GitHub!
