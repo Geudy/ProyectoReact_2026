@@ -12,25 +12,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
-  title: "Administrador de proyectos",
-  description: "Aplicación para gestionar proyectos y tareas",
+  title: {
+    default: 'Administrador de proyectos',
+    template: '%s | TaskFlow',
+  },
+  description: 'Aplicación para gestionar proyectos y tareas',
   openGraph: {
-    title: "Administrador de proyectos",
-    description: "Aplicación para gestionar proyectos y tareas"
+    title: 'Administrador de proyectos',
+    description: 'Aplicación para gestionar proyectos y tareas',
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

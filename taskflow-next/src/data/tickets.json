@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Diseñar wireframes",
+    "description": "Crear los wireframes del dashboard principal",
+    "status": "done",
+    "priority": "high",
+    "project": "TaskFlow UI",
+    "assignee": "Alice",
+    "createdAt": "2026-04-01"
+  },
+  {
+    "id": "2",
+    "title": "Implementar autenticación",
+    "description": "Login con email y contraseña",
+    "status": "in_progress",
+    "priority": "high",
+    "project": "TaskFlow Backend",
+    "assignee": "Bob",
+    "createdAt": "2026-04-02"
+  },
+  {
+    "id": "3",
+    "title": "Escribir tests unitarios",
+    "description": "Tests para el módulo de tareas",
+    "status": "todo",
+    "priority": "medium",
+    "project": "TaskFlow UI",
+    "assignee": "Charlie",
+    "createdAt": "2026-04-03"
+  },
+  {
+    "id": "4",
+    "title": "Configurar CI/CD",
+    "description": "Pipeline de despliegue automático",
+    "status": "todo",
+    "priority": "low",
+    "project": "TaskFlow DevOps",
+    "createdAt": "2026-04-03"
+  },
+  {
+    "id": "5",
+    "title": "Code review del sprint",
+    "description": "Revisar PRs pendientes",
+    "status": "in_progress",
+    "priority": "medium",
+    "project": "TaskFlow UI",
+    "createdAt": "2026-04-04"
+  }
+]
